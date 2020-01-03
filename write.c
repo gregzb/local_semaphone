@@ -58,6 +58,8 @@ int main() {
     sb.sem_op = 1;
     semop(semd, &sb, 1);
     printf("Released semaphore!\n");
+
+    close(fd);
   } else {
     printf("Could not acquire semaphore: %s\n", strerror(errno));
   }

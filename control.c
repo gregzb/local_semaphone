@@ -59,6 +59,7 @@ int main(int argc, char** argv) {
           printf("Error opening file: %s\n", strerror(errno));
         } else {
           printf("Created story file\n");
+          close(fd);
         }
       }
 
@@ -108,6 +109,7 @@ int main(int argc, char** argv) {
         while ((read_bytes = read(fd, buf, 1024)) > 0) {
           printf("%s", buf);
         }
+        close(fd);
       }
       return 0;
     }
